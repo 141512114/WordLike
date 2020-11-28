@@ -4,8 +4,14 @@ The idea came to my mind because of the missing free alternatives to OpenOffice 
 learn a bit angular and electron.js.
 
 # Packages installed in this project
-- Angular
-- Electron.js
+Here's a small list of the installed / used packages inside this project. If you need to install some of them, you can use
+```npm
+npm i [package-name]
+```
+to install them. Make sure they're installed locally inside this projects directory.
+
+- angular
+- electron
 - ngx-electron
 - ngx-deploy-npm
 - @angular/cli
