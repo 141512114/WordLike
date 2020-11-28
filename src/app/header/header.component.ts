@@ -27,7 +27,7 @@ export class HeaderComponent implements OnInit {
             break;
 
         case 'minimize':
-          currentWindow.minimize();
+            currentWindow.minimize();
             break;
 
         case 'maximize':
@@ -35,7 +35,7 @@ export class HeaderComponent implements OnInit {
               if (currentWindow.isMaximized()) {
                 currentWindow.unmaximize();
               } else {
-                  currentWindow.maximize();
+                currentWindow.maximize();
               }
             }
             break;
