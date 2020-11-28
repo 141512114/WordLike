@@ -12,11 +12,18 @@ learn a bit angular and electron.js.
 - angular-cli-ghpages
 
 # Commands
+Here's a small list of important commands which you will need if you decide to download / copy this repository.
+It may be that this list grows as time passes.
+
 ## Run project
-```npm npm run electron```
+```npm 
+npm run electron
+```
 
 ## Build and run project
-```npm npm run electron-build```
+```npm 
+npm run electron-build
+```
 
 # More indepth information
 You can get more information and the current status of this project by visiting my [twitter account](https://twitter.com/Kool89271319).
