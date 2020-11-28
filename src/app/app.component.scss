@@ -1,0 +1,16 @@
+// Color variables
+$d_color_palette_one: #EFEFEF;
+$d_color_palette_two: #e4e4e4;
+$d_color_palette_three: #888888;
+
+// Size variables
+$d_header_height: 36px;
+
+// Fonts
+@font-face { font-family: Roboto Medium; src: url('../fonts/Roboto/Roboto-Medium.ttf'); font-display: swap; }
+
+// Default css settings
+* {
+    position: relative;
+    box-sizing: border-box;
+}

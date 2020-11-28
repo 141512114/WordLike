@@ -1,0 +1,141 @@
+@import '../app.component.scss';
+
+header#main {
+    top: 0;
+    left: 0;
+
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    width: 100%;
+    height: $d_header_height;
+
+    margin: 0;
+    padding: 0;
+
+    overflow: hidden;
+    -webkit-app-region: drag;
+
+    nav.window-actions {
+        width: auto;
+        height: 100%;
+        -webkit-app-region: none;
+
+        ul {
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+
+            width: auto;
+            height: 100%;
+
+            margin: 0;
+            $d_action_btn_offset: 8px;
+            padding: 0;
+            padding-left: $d_action_btn_offset;
+
+            li {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                width: auto;
+                height: 100%;
+
+                margin: 0;
+                margin-right: $d_action_btn_offset;
+                padding: 0;
+
+                list-style: none;
+                background-color: transparent;
+
+                button {
+                    $d_square: 20px; 
+                    width: $d_square;
+                    height: $d_square;
+
+                    margin: 0;
+                    padding: 0;
+
+                    font-family: 'Roboto Medium', sans-serif;
+                    font-size: 24px;
+                    font-weight: 500;
+                    color: $d_color_palette_three;
+                    text-align: center;
+
+                    border: none;
+                    outline: none;
+                    border-radius: 100%;
+                    user-select: none;
+
+                    transition: all 250ms;
+
+                    &:hover {
+                        cursor: pointer;
+                    }
+
+                    &.edged {
+                        border-radius: 0;
+                        background-color: transparent;
+                    }
+
+                    &#close-app {
+                        background-color: #fd3939;
+                        &:hover {
+                            cursor: pointer;
+                            background-color: #da2c2c;
+                        }
+                    }
+                    &#maximize-app {
+                        background-color: #ffdf42;
+                        &:hover {
+                            cursor: pointer;
+                            background-color: #e4c52c;
+                        }
+                    }
+                    &#minimize-app {
+                        background-color: #3cfd89;
+                        &:hover {
+                            cursor: pointer;
+                            background-color: #29dd71;
+                        }
+                    }
+                }
+
+                &:last-child {margin-right: 0;}
+
+                &#add-window {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    $d_square: $d_header_height;
+                    width: $d_square;
+                    height: $d_square;
+
+                    transition: all 250ms;
+
+                    button {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        width: auto;
+                        height: 100%;
+
+                        svg {
+                            width: 15px;
+                            height: 15px;
+
+                            path {fill: $d_color_palette_three;}
+                        }
+                    }
+
+                    &:hover {
+                        cursor: pointer;
+                        background-color: $d_color_palette_one;
+                    }
+                }
+            }
+        }
+    }
+}
