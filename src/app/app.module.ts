@@ -7,12 +7,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ControlPanelComponent } from './control-panel/control-panel.component';
 import { HeaderComponent } from './header/header.component';
+import { DocViewerComponent } from './doc-viewer/doc-viewer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ControlPanelComponent,
-    HeaderComponent
+    HeaderComponent,
+    DocViewerComponent
   ],
   imports: [
     BrowserModule,

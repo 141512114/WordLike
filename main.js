@@ -1,6 +1,6 @@
 const { app, BrowserWindow, Menu, MenuItem } = require('electron');
-const url = require("url");
-const path = require("path");
+const url = require('url');
+const path = require('path');
 
 let win;
 
@@ -18,6 +18,7 @@ function createWindow() {
             resizable: false,
             maximizable: false
         },
+        center: true,
         frame: false
     });
     win.loadURL(

@@ -66,7 +66,7 @@ section#main-content {
 
                 a {
                     text-decoration: none;
-                    color: #ff3da7;
+                    color: $d_color_palette_three;
 
                     &:hover {
                         cursor: pointer;
@@ -83,7 +83,7 @@ section#main-content {
             border-radius: 15px;
             outline: none;
             user-select: none;
-            background-color: #260d33;
+            background-color: $d_color_palette_one;
             transition: all 350ms;
 
             svg {
@@ -95,7 +95,7 @@ section#main-content {
                 padding: 0;
 
                 path {
-                    fill: #ff3da7;
+                    fill: $d_color_palette_three;
                 }
             }
 
@@ -112,7 +112,7 @@ section#main-content {
                 h3 {
                     font-size: 29px;
                     margin-bottom: 2px;
-                    color: #ff3da7;
+                    color: $d_color_palette_three;
                 }
                 p {
                     font-size: 16px;
@@ -122,7 +122,7 @@ section#main-content {
 
             &:hover {
                 cursor: pointer;
-                background-color: #321242;
+                background-color: $d_color_palette_two;
             }
         }
     }
