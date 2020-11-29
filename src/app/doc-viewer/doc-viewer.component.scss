@@ -142,7 +142,7 @@ section#main-content {
                 padding: 75px 55px;
     
                 overflow: auto;
-                background-color: $d_color_palette_two;
+                background-color: $d_color_palette_four;
     
                 div.document-page {
                     margin: 0;
@@ -170,127 +170,49 @@ section#main-content {
                 }
             }
         }
+
+        div#editor-panel {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+            width: 100%;
+            height: 62px;
+
+            margin: 0;
+            padding: 6px 0;
     
-        div#sidebar {
-            $d_sidebar_width: 275px;
-            width: 0;
-            height: 100%;
-    
+            overflow: hidden;
+            background-color: $d_color_palette_two;
             transition: all 350ms;
-    
-            $d_sidebar_font_size: 22px;
-            div.sidebar-puffer {
-                width: $d_sidebar_width;
-    
-                div.sidebar-title {
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    width: 100%;
-                    height: 72px;
-    
+
+            $d_sidebar_font_size: 27px;
+            div.edit-color {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: auto;
+                height: 100%;
+
+                margin: 0;
+
+                div.color-icon {
+                    display: inline-table;
+                    width: $d_sidebar_font_size+3px;
+                    height: $d_sidebar_font_size+3px;
+
                     margin: 0;
-                    margin-bottom: 35px;
-                    padding: 0 40px;
-    
-                    user-select: none;
-    
-                    h2 {
-                        width: 100%;
-                        height: auto;
-    
-                        margin: 0;
-                        padding: 4px 0;
-    
-                        font-family: 'Roboto Medium', sans-serif;
-                        font-size: $d_sidebar_font_size;
-                        font-weight: 500;
-                        color: $d_color_palette_three;
-                        text-align: center;
-    
-                        border-radius: 100px;
-                        background-color: $d_color_palette_one;
-                    }
-                }
-    
-                div.category {
-                    margin: 0;
-                    margin-bottom: 25px;
                     padding: 0;
-    
-                    &:last-child {margin-bottom: 0;}
+
+                    border: 3px solid $d_color_palette_four;
+                    border-radius: 100%;
+                    background-color: #000000;
+                    transition: all 300ms;
                 }
-    
-                div.sidebar-text-editor {
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    flex-direction: column;
-                    width: 100%;
-                    height: auto;
-    
-                    margin: 0;
-                    padding: 0 30px;
-    
-                    div.general-settings {
-                        width: 100%;
-                        height: auto;
-    
-                        margin: 0;
-                        padding: 0;
-    
-                        div.change-text-color {
-                            display: flex;
-                            justify-content: center;
-                            align-items: center;
-                            flex-direction: row;
-                            width: 100%;
-                            height: auto;
-    
-                            margin: 0;
-                            padding: 0;
-    
-                            div#color-icon {
-                                display: inline-table;
-                                width: $d_sidebar_font_size+3px;
-                                height: $d_sidebar_font_size+3px;
-    
-                                margin: 0;
-                                margin-right: 8px;
-                                padding: 0;
-    
-                                border-radius: 100%;
-                                background-color: #000000;
-                                transition: all 300ms;
-                            }
-    
-                            input#color-code {
-                                flex-grow: 1;
-                                width: 100%;
-                                height: auto;
-    
-                                margin: 0;
-                                padding: 4px 0;
-    
-                                font-family: 'Roboto Medium', sans-serif;
-                                font-size: $d_sidebar_font_size;
-                                font-weight: 500;
-                                color: $d_color_palette_three;
-                                text-align: center;
-    
-                                outline: none;
-                                border: none;
-                                border-radius: 100px;
-                                background-color: $d_color_palette_one;
-                            }
-                        }
-                    }
-                }
-            }
-            
-    
-            &.sidebar-open {
-                width: $d_sidebar_width;
             }
         }
     }

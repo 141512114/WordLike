@@ -19,23 +19,23 @@ export class HeaderComponent implements OnInit {
   }
 
   taskBarActions(action:string) {
-    let currentWindow = this._electronService.remote.BrowserWindow.getFocusedWindow();
+    let focusedWindow = this._electronService.remote.BrowserWindow.getFocusedWindow();
 
     switch (action) {
         case 'closeWindow':
-          currentWindow.close();
+          focusedWindow.close();
           break;
 
         case 'minimize':
-          currentWindow.minimize();
+          focusedWindow.minimize();
           break;
 
         case 'maximize':
-          if (currentWindow.isMaximizable()) {
-            if (currentWindow.isMaximized()) {
-              currentWindow.unmaximize();
+          if (focusedWindow.isMaximizable()) {
+            if (focusedWindow.isMaximized()) {
+              focusedWindow.unmaximize();
             } else {
-              currentWindow.maximize();
+              focusedWindow.maximize();
             }
           }
           break;
