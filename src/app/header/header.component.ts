@@ -23,22 +23,22 @@ export class HeaderComponent implements OnInit {
 
     switch (action) {
         case 'closeWindow':
-            currentWindow.close();
-            break;
+          currentWindow.close();
+          break;
 
         case 'minimize':
-            currentWindow.minimize();
-            break;
+          currentWindow.minimize();
+          break;
 
         case 'maximize':
-            if (currentWindow.isMaximizable()) {
-              if (currentWindow.isMaximized()) {
-                currentWindow.unmaximize();
-              } else {
-                currentWindow.maximize();
-              }
+          if (currentWindow.isMaximizable()) {
+            if (currentWindow.isMaximized()) {
+              currentWindow.unmaximize();
+            } else {
+              currentWindow.maximize();
             }
-            break;
+          }
+          break;
     }
   }
 }
