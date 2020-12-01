@@ -97,6 +97,16 @@ section#main-content {
                 path {
                     fill: $d_color_palette_three;
                 }
+
+                &.arrow-hint {
+                    margin-right: 0;
+                    margin-left: auto;
+
+                    path {
+                        fill: #1e0629;
+                        transition: all 350ms;
+                    }
+                }
             }
 
             div.button-desc {
@@ -123,6 +133,10 @@ section#main-content {
             &:hover {
                 cursor: pointer;
                 background-color: $d_color_palette_two;
+
+                svg.arrow-hint path {
+                    fill: $d_color_palette_three;
+                }
             }
         }
     }
