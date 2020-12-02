@@ -2,6 +2,7 @@
 This is a small application made with electron.js inside angular. It should be some sort of text editor, where you can create, write and open documents.
 The idea came to my mind because of the missing free alternatives to OpenOffice and LibreOffice. This project won't compete with them, it was made just to
 learn a bit angular and electron.js.
+The first version of this small project will contain a working control panel, a document viewer and features to customize text a bit. Like color and font change, resizing the font, set text styles (italic, bold, underlined, ...) and set the alignment of the text. 
 
 # Packages installed in this project
 Here's a small list of the installed / used packages inside this project. If you need to install some of them, you can use
