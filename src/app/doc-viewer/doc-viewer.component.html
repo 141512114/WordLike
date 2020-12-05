@@ -3,19 +3,19 @@
     <div id="document-viewer">
         <app-tool-bar></app-tool-bar>
 
-        <div class="document-modules">
-            <div class="document-editor-module">
-                <ul class="option-list">
-                    <li><span class="option"><input id="color-code" placeholder="Color code here..." maxlength="7" value="#000000"><span id="color-icon"></span></span><span class="head-icon"></span>
-                    </li><li><span class="option"><input id="font-family" placeholder="Font goes here..." value="Roboto Medium"></span><span class="head-icon"></span>
-                    </li><li><span class="option"><input id="font-size" placeholder="Size in numbers..." value="16"></span><span class="head-icon"></span>
-                    </li>
-                </ul>
-            </div>
+        <div class="document-view-module">
+            <app-doc-container></app-doc-container>
 
-            <div class="document-view-module">
-                <app-doc-container></app-doc-container>
-    
+            <div class="document-editor-module">
+                <div class="document-editor-panel">
+                    <ul class="option-list">
+                        <li><span class="option"><input id="color-code" placeholder="Color code here..." maxlength="7" value="#000000"><span id="color-icon"></span></span><span class="head-icon"></span>
+                        </li><li><span class="option"><input id="font-family" placeholder="Font goes here..." value="Roboto Medium"></span><span class="head-icon"></span>
+                        </li><li><span class="option"><input id="font-size" placeholder="Size in numbers..." value="16"></span><span class="head-icon"></span>
+                        </li>
+                    </ul>
+                </div>
+
                 <div class="document-editor-space">
                     <div class="editor-module text-editor">
                         <h3>Text editor</h3>
