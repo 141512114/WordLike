@@ -1,6 +1,6 @@
 @import '../app.component.scss';
 
-div.document-container {
+div#document-container {
     @include d_flexEl(column, 0, 75px 55px, auto);
     align-items: center;
     background-color: $d_color_palette_four;
