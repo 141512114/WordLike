@@ -13,6 +13,20 @@ $d_header_height: 36px;
 // Fonts
 @font-face { font-family: Roboto Medium; src: url('../fonts/Roboto/Roboto-Medium.ttf'); font-display: swap; }
 
+// Mixins
+@mixin d_flexEl($dir: column, $margin: 0px, $padding: 0px, $overflow: hidden) {
+    display: flex;
+    flex-direction: $dir;
+    flex-grow: 1;
+    width: 100%;
+    height: 100%;
+
+    margin: $margin;
+    padding: $padding;
+
+    overflow: $overflow;
+}
+
 // Default css settings
 * {
     position: relative;

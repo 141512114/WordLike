@@ -8,13 +8,15 @@ import { AppComponent } from './app.component';
 import { ControlPanelComponent } from './control-panel/control-panel.component';
 import { HeaderComponent } from './header/header.component';
 import { DocViewerComponent } from './doc-viewer/doc-viewer.component';
+import { DocContainerComponent } from './doc-container/doc-container.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ControlPanelComponent,
     HeaderComponent,
-    DocViewerComponent
+    DocViewerComponent,
+    DocContainerComponent
   ],
   imports: [
     BrowserModule,
