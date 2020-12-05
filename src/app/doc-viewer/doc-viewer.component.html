@@ -5,35 +5,7 @@
 
         <div class="document-view-module">
             <app-doc-container></app-doc-container>
-
-            <div class="document-editor-module">
-                <div class="document-editor-panel">
-                    <ul class="option-list">
-                        <li><span class="option"><input id="color-code" placeholder="Color code here..." maxlength="7" value="#000000"><span id="color-icon"></span></span><span class="head-icon"></span>
-                        </li><li><span class="option"><input id="font-family" placeholder="Font goes here..." value="Roboto Medium"></span><span class="head-icon"></span>
-                        </li><li><span class="option"><input id="font-size" placeholder="Size in numbers..." value="16"></span><span class="head-icon"></span>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="document-editor-space">
-                    <div class="editor-module text-editor">
-                        <h3>Text editor</h3>
-                        <ul class="option-list">
-                            <li class="change-color"><input id="color-code" placeholder="Color code here..." maxlength="7" value="#000000"><span id="color-icon"></span>
-                            </li><!-- <li class="change-alignment"><ul>
-                                <li></li><li></li><li></li><li></li>
-                            </ul></li> --><li class="change-font"><ul>
-                                <li><input id="font-family" placeholder="Font goes here..." value="Roboto Medium">
-                                </li><li><input id="font-size" placeholder="Size in numbers..." value="16">
-                                </li><!-- <li class="change-text-style"><ul>
-                                    <li></li><li></li><li></li><li></li>
-                                </ul></li> -->
-                            </ul></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+            <app-doc-editor></app-doc-editor>
         </div>
     </div>
 </section>
