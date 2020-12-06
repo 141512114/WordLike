@@ -8,12 +8,12 @@ div.document-editor-panel {
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    $d_sidebar_width: 63px;
+    $d_sidebar_width: 61px;
     width: $d_sidebar_width;
     height: 100%;
 
     margin: 0;
-    padding: 17px 0;
+    padding: 15px 0;
 
     pointer-events: all;
     background-color: $d_color_palette_six;
@@ -33,18 +33,25 @@ div.document-editor-panel {
             height: auto;
 
             margin: 0;
-            margin-bottom: 9px;
-            padding: 0 10px;
+            padding: 0;
+            
+            transition: all 350ms;
 
             svg {
                 width: 100%;
                 height: auto;
 
+                margin: 0;
+                padding: 4px 9px;
+
                 transition: all 300ms;
                 animation-play-state: paused;
                 z-index: 10;
 
-                path {fill: $d_color_palette_three;}
+                path {
+                    fill: $d_color_palette_three;
+                    transition: all 350ms;
+                }
 
                 @keyframes hophop {
                     20% {
@@ -67,12 +74,54 @@ div.document-editor-panel {
                 top: 0;
                 left: $d_sidebar_width;
 
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
                 width: 0;
-                height: 350px;
+                min-height: 100%;
+                height: auto;
 
-                background-color: white;
+                margin: 0;
+                padding: 11px 0;
+
+                background-color: $d_color_palette_six;
                 z-index: 0;
                 transition: all 350ms;
+                overflow: hidden;
+                cursor: default;
+
+                div#color-icon {
+                    width: 45px;
+                    height: 45px;
+
+                    margin: 0;
+                    margin-bottom: 11px;
+                    padding: 0;
+
+                    background-color: #000000;
+                    border-radius: 50%;
+                    overflow: hidden;
+                }
+
+                input {
+                    width: 190px;
+                    height: auto;
+
+                    margin: 0;
+                    padding: 6px 11px;
+
+                    font-family: 'Roboto Medium', sans-serif;
+                    font-size: 21px;
+                    font-weight: 500;
+                    color: $d_color_palette_three;
+                    text-align: center;
+
+                    border: none;
+                    border-radius: 100px;
+                    outline: none;
+                    background-color: $d_color_palette_one;
+                }
             }
 
             &:last-child {margin-bottom: 0;}
@@ -84,10 +133,17 @@ div.document-editor-panel {
                     animation-play-state: running;
                     animation-delay: .135s;
                 }
+            }
 
-                div.tool-window {
-                    width: 250px;
+            &.open {
+                background-color: $d_color_palette_three;
+
+                svg {
+                    animation: none;
+                    animation-play-state: paused;
+                    path {fill: $d_color_palette_six;}
                 }
+                div.tool-window {width: 225px;}
             }
         }
     }
