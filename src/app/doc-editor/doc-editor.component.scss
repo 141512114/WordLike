@@ -37,18 +37,11 @@ div.document-editor-panel {
             svg {
                 width: 100%;
                 height: auto;
+                
                 transition: all 300ms;
-
-                path {fill: $d_color_palette_three;}
-
                 animation-play-state: paused;
 
-                &:hover {
-                    cursor: pointer;
-                    animation: hophop 1.075s infinite;
-                    animation-play-state: running;
-                    animation-delay: .135s;
-                }
+                path {fill: $d_color_palette_three;}
 
                 @keyframes hophop {
                     20% {
@@ -67,6 +60,15 @@ div.document-editor-panel {
             }
 
             &:last-child {margin-bottom: 0;}
+            &:hover {
+                cursor: pointer;
+
+                svg {
+                    animation: hophop 1.075s infinite;
+                    animation-play-state: running;
+                    animation-delay: .135s;
+                }
+            }
         }
     }
 }
