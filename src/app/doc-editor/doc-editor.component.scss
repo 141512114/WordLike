@@ -5,22 +5,19 @@ div.document-editor-panel {
     top: 0;
     left: 0;
 
-    $d_panel_width: 350px;
-    $d_panel_bar_width: 55px;
-
-    width: $d_panel_width;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 63px;
     height: 100%;
 
     margin: 0;
-    padding: 0;
+    padding: 17px 0;
 
     pointer-events: all;
-    $d_panel_offset: $d_panel_width - $d_panel_bar_width;
-    transform: translateX(-$d_panel_offset);
-    transition: all 450ms;
     background-color: $d_color_palette_six;
 
-    div.text-editor {
+    ul.text-editor {
         display: flex;
         flex-direction: column;
         width: 100%;
@@ -29,100 +26,47 @@ div.document-editor-panel {
         margin: 0;
         padding: 0;
 
-        overflow: hidden;
-        transition: all 300ms;
-
-        div.header {
-            display: flex;
-            flex-direction: row;
-            width: 100%;
-            height: $d_panel_bar_width;
-
-            margin: 0;
-            padding: 0;
-
-            h2 {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                width: 100%;
-                height: $d_panel_bar_width;
-                flex-grow: 1;
-
-                margin: 0;
-                padding: 0;
-
-                text-align: center;
-            }
-
-            div.panel-icon {
-                display: inline-table;
-                width: $d_panel_bar_width;
-                height: $d_panel_bar_width;
-            }
-        }
-
-        div.content {
+        li {
             width: 100%;
             height: auto;
 
             margin: 0;
-            padding: 0;
+            margin-bottom: 9px;
+            padding: 0 10px;
 
-            ul.option-list {
-                display: flex;
-                flex-direction: column;
+            svg {
                 width: 100%;
                 height: auto;
+                transition: all 300ms;
 
-                margin: 0;
-                padding: 0;
+                path {fill: $d_color_palette_three;}
 
-                li {
-                    display: flex;
-                    flex-direction: row;
-                    width: 100%;
-                    height: auto;
+                animation-play-state: paused;
 
-                    margin: 0;
-                    padding: 0;
+                &:hover {
+                    cursor: pointer;
+                    animation: hophop 1.075s infinite;
+                    animation-play-state: running;
+                    animation-delay: .135s;
+                }
 
-                    list-style: none;
-
-                    span.head-icon {
-                        display: inline-table;
-                        width: $d_panel_bar_width;
-                        height: $d_panel_bar_width;
+                @keyframes hophop {
+                    20% {
+                        transform: translateY(-6px);
                     }
-
-                    span.option {
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                        width: 100%;
-                        height: $d_panel_bar_width;
-                        flex-grow: 1;
-
-                        margin: 0;
-                        padding: 9px 0;
-
-                        input {
-                            width: 210px;
-                            height: 100%;
-
-                            text-align: center;
-
-                            border: none;
-                            border-radius: 100px;
-                            outline: none;
-                        }
+                    30% {
+                        transform: translateY(0px);
+                    }
+                    43% {
+                        transform: translateY(-4px);
+                    }
+                    52% {
+                        transform: translateY(0px);
                     }
                 }
             }
-        }
-    }
 
-    &:hover {
-        transform: translateX(0px);
+            &:last-child {margin-bottom: 0;}
+        }
     }
 }
