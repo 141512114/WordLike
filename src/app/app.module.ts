@@ -8,7 +8,6 @@ import { AppComponent } from './app.component';
 import { ControlPanelComponent } from './control-panel/control-panel.component';
 import { HeaderComponent } from './header/header.component';
 import { DocViewerComponent } from './doc-viewer/doc-viewer.component';
-import { DocContainerComponent } from './doc-container/doc-container.component';
 import { ToolBarComponent } from './tool-bar/tool-bar.component';
 import { DocEditorComponent } from './doc-editor/doc-editor.component';
 
@@ -18,7 +17,6 @@ import { DocEditorComponent } from './doc-editor/doc-editor.component';
     ControlPanelComponent,
     HeaderComponent,
     DocViewerComponent,
-    DocContainerComponent,
     ToolBarComponent,
     DocEditorComponent
   ],

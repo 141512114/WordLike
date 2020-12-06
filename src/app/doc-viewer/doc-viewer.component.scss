@@ -16,14 +16,47 @@ section#main-content {
 
     div#document-viewer {
         @include d_flexEl();
+        flex-grow: 1;
 
-        div.document-view-module {
-            width: 100%;
-            height: 100%;
-            flex-grow: 1;
+        margin: 0;
+        padding: 0;
 
-            margin: 0;
-            padding: 0;
+        div.document-viewer-scroll {
+            @include d_flexEl(none);
+            overflow: auto;
+            background-color: $d_color_palette_four;
+        
+            div#document-container {
+                @include d_flexEl(column, 0, 75px 55px, visible);
+                align-items: center;
+                height: fit-content;
+        
+                div.document-page {
+                    margin: 0;
+                    padding: 9px;
+        
+                    textarea {
+                        width: 210mm;
+                        height: 297mm;
+        
+                        margin: 0;
+                        padding: 25px 55px;
+        
+                        font-family: 'Roboto Medium', sans-serif;
+                        font-size: 16px;
+                        font-weight: 500;
+                        color: black;
+                        text-align: left;
+        
+                        border: none;
+                        outline: none;
+                        resize: none;
+                        overflow: hidden;
+                        background-color: white;
+                        box-shadow: 0 0 56px 0 rgba(0, 0, 0, .05);
+                    }
+                }
+            }
         }
     }
 }

@@ -1,10 +1,14 @@
 <section id="main-content">
     <app-header></app-header>
+    <app-tool-bar></app-tool-bar>
     <div id="document-viewer">
-        <app-tool-bar></app-tool-bar>
-        <div class="document-view-module">
-            <app-doc-container></app-doc-container>
-            <app-doc-editor style="position: unset;"></app-doc-editor>
+        <div class="document-viewer-scroll">
+            <div id="document-container">
+                <div class="document-page"><textarea></textarea></div>
+                <div class="document-page"><textarea></textarea></div>
+                <div class="document-page"><textarea></textarea></div>
+            </div>
         </div>
+        <app-doc-editor style="position: unset;"></app-doc-editor>
     </div>
 </section>
