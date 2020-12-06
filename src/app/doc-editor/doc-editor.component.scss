@@ -1,71 +1,75 @@
 @import '../app.component.scss';
 
-div.document-editor-module {
+div.document-editor-panel {
     position: absolute;
     top: 0;
     left: 0;
 
-    width: 100%;
+    $d_panel_width: 350px;
+    $d_panel_bar_width: 55px;
+
+    width: $d_panel_width;
     height: 100%;
 
     margin: 0;
     padding: 0;
 
-    pointer-events: none;
+    pointer-events: all;
+    $d_panel_offset: $d_panel_width - $d_panel_bar_width;
+    transform: translateX(-$d_panel_offset);
+    transition: all 450ms;
+    background-color: $d_color_palette_six;
 
-    div.document-editor-panel {
-        pointer-events: all;
-    }
+    div.text-editor {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: auto;
 
-    div.document-editor-space {
-        @include d_flexEl(column, 0, 27px 15px, hidden);
-        justify-content: flex-start;
-        align-items: flex-start;
+        margin: 0;
+        padding: 0;
 
-        pointer-events: none;
+        overflow: hidden;
+        transition: all 300ms;
 
-        div.editor-module {
-            position: relative;
+        div.header {
             display: flex;
-            justify-content: center;
-            flex-direction: column;
+            flex-direction: row;
+            width: 100%;
+            height: $d_panel_bar_width;
 
-            width: 275px;
+            margin: 0;
+            padding: 0;
+
+            h2 {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                height: $d_panel_bar_width;
+                flex-grow: 1;
+
+                margin: 0;
+                padding: 0;
+
+                text-align: center;
+            }
+
+            div.panel-icon {
+                display: inline-table;
+                width: $d_panel_bar_width;
+                height: $d_panel_bar_width;
+            }
+        }
+
+        div.content {
+            width: 100%;
             height: auto;
 
             margin: 0;
-            padding: 17px;
+            padding: 0;
 
-            border: 1px solid $d_color_palette_one;
-            border-radius: 30px;
-            background-color: $d_color_palette_five;
-            pointer-events: all;
-            transition: all 275ms;
-
-            animation-play-state: paused;
-
-            h3 {
-                width: 100%;
-                height: auto;
-
-                margin: 0;
-                margin-bottom: 21px;
-                padding: 0;
-                padding-bottom: 9px;
-
-                font-family: 'Roboto Medium', sans-serif;
-                font-size: 22px;
-                font-weight: 500;
-                color: $d_color_palette_seven;
-                text-align: center;
-
-                border-bottom: 2px solid $d_color_palette_one;
-
-                user-select: none;
-                transition: all 275ms;
-            }
-
-            ul {
+            ul.option-list {
                 display: flex;
                 flex-direction: column;
                 width: 100%;
@@ -75,73 +79,50 @@ div.document-editor-module {
                 padding: 0;
 
                 li {
+                    display: flex;
+                    flex-direction: row;
                     width: 100%;
                     height: auto;
 
                     margin: 0;
-                    margin-bottom: 9px;
                     padding: 0;
 
                     list-style: none;
 
-                    input {
+                    span.head-icon {
+                        display: inline-table;
+                        width: $d_panel_bar_width;
+                        height: $d_panel_bar_width;
+                    }
+
+                    span.option {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
                         width: 100%;
+                        height: $d_panel_bar_width;
+                        flex-grow: 1;
 
                         margin: 0;
-                        padding: 4px 22px;
+                        padding: 9px 0;
 
-                        font-family: 'Roboto Medium', sans-serif;
-                        font-size: 20px;
-                        font-weight: 500;
-                        color: $d_color_palette_three;
-                        text-align: center;
+                        input {
+                            width: 210px;
+                            height: 100%;
 
-                        border: none;
-                        border-radius: 100px;
-                        outline: none;
-                        background-color: $d_color_palette_one;
-                        transition: all 275ms;
-                    }
+                            text-align: center;
 
-                    &:last-child {margin-bottom: 0;}
-                    &.change-color {
-                        display: flex;
-                        flex-direction: row;
-
-                        span#color-icon {
-                            display: inline-table;
-                            width: 32px;
-                            height: 32px;
-
-                            margin: 0;
-                            margin-left: 7px;
-                            padding: 0;
-
-                            border-radius: 50%;
-                            background-color: #000000;
+                            border: none;
+                            border-radius: 100px;
+                            outline: none;
                         }
-
-                        input#color-code {flex-grow: 1;}
                     }
-                }
-            }
-
-            &:hover {
-                animation: shadowBlink 1.25s infinite ease-out;
-                animation-delay: 150ms;
-                border-color: $d_color_palette_three;
-
-                h3 {color: $d_color_palette_three;}
-            }
-
-            @keyframes shadowBlink {
-                0% {
-                    box-shadow: 0 0 0 0 rgba(255, 61, 167, .35);
-                }
-                65% {
-                    box-shadow: 0 0 0 18px rgba(255, 61, 167, 0);
                 }
             }
         }
+    }
+
+    &:hover {
+        transform: translateX(0px);
     }
 }
