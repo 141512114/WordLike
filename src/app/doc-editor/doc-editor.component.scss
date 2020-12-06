@@ -8,7 +8,8 @@ div.document-editor-panel {
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    width: 63px;
+    $d_sidebar_width: 63px;
+    width: $d_sidebar_width;
     height: 100%;
 
     margin: 0;
@@ -41,6 +42,7 @@ div.document-editor-panel {
 
                 transition: all 300ms;
                 animation-play-state: paused;
+                z-index: 10;
 
                 path {fill: $d_color_palette_three;}
 
@@ -63,12 +65,14 @@ div.document-editor-panel {
             div.tool-window {
                 position: absolute;
                 top: 0;
-                left: 0;
+                left: $d_sidebar_width;
 
-                width: 250px;
+                width: 0;
                 height: 350px;
 
                 background-color: white;
+                z-index: 0;
+                transition: all 350ms;
             }
 
             &:last-child {margin-bottom: 0;}
@@ -79,6 +83,10 @@ div.document-editor-panel {
                     animation: hophop 1.075s infinite;
                     animation-play-state: running;
                     animation-delay: .135s;
+                }
+
+                div.tool-window {
+                    width: 250px;
                 }
             }
         }
