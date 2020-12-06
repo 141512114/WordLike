@@ -1,2 +1,2 @@
-# new_word_app
-A new "word"-like application
+# Actual application
+This is the final result after building the project.
