@@ -18,18 +18,20 @@ export class DocViewerComponent implements OnInit {
       for (var i = 0; i < docContainerChildren; i++) {
         docContainer.children[i].addEventListener('mousedown', function() {isDown = true;});
         docContainer.children[i].addEventListener('mouseup', function() {
-          isDown = false;
-          var selection = getSelectionText(); if (selection !== "") {
-            console.log(selection);
-            var range; if (window.getSelection && window.getSelection().getRangeAt) {
-              range = window.getSelection().getRangeAt(0);
-              range.deleteContents();
-              var wrapper = document.createElement("div");
-              wrapper.innerHTML = "<b>"+selection+"</b>";
-              var frag = document.createDocumentFragment(), child;
-              while (child = wrapper.firstChild) {frag.appendChild(child);}
-              range.insertNode(frag);
+          if (isDown) {
+            var selection = getSelectionText(); if (selection !== "") {
+              console.log(selection);
+              var range; if (window.getSelection && window.getSelection().getRangeAt) {
+                range = window.getSelection().getRangeAt(0);
+                range.deleteContents();
+                var wrapper = document.createElement("div");
+                wrapper.innerHTML = "<b>"+selection+"</b>";
+                var frag = document.createDocumentFragment(), child;
+                while (child = wrapper.firstChild) {frag.appendChild(child);}
+                range.insertNode(frag);
+              }
             }
+            isDown = false;
           }
         });
       }
