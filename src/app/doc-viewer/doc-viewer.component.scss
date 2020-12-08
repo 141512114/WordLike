@@ -31,30 +31,30 @@ section#main-content {
                 align-items: center;
                 height: fit-content;
         
-                div.document-page {
+                p.document-page {
+                    width: 210mm;
+                    height: 297mm;
+
                     margin: 0;
-                    padding: 9px;
-        
-                    textarea {
-                        width: 210mm;
-                        height: 297mm;
-        
-                        margin: 0;
-                        padding: 25px 55px;
-        
-                        font-family: 'Roboto Medium', sans-serif;
-                        font-size: 16px;
-                        font-weight: 500;
-                        color: black;
-                        text-align: left;
-        
-                        border: none;
-                        outline: none;
-                        resize: none;
-                        overflow: hidden;
-                        background-color: white;
-                        box-shadow: 0 0 56px 0 rgba(0, 0, 0, .05);
-                    }
+                    margin-bottom: 25px;
+                    padding: 25px 55px;
+    
+                    font-family: 'Roboto Medium', sans-serif;
+                    font-size: 16px;
+                    font-weight: 500;
+                    color: black;
+                    text-align: left;
+
+                    white-space: pre-wrap;
+    
+                    border: none;
+                    outline: none;
+                    resize: none;
+                    overflow: hidden;
+                    background-color: white;
+                    box-shadow: 0 0 56px 0 rgba(0, 0, 0, .05);
+
+                    &:last-child {margin-bottom: 0;}
                 }
             }
         }
