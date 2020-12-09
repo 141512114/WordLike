@@ -9,28 +9,34 @@ function getSelectionText() {
 
 function executeTool(tool: string) {
   if (selectionEl !== null && selectionText !== null && range !== null) {
-    switch (tool) {
-      case 'color-tool':
-        let color_val = (document.getElementById('color-code') as HTMLInputElement).value;
-        changeSelectionText(color_val);
-        break;
-  
-      case 'font-change-tool':
-        break;
-  
-      case 'font-size-tool':
-        break;
-  
-      default:
-        break;
+    let htmlEl = changeSelectionText(); if (htmlEl !== null) {
+      switch (tool) {
+        case 'color-tool':
+          let color_val = (document.getElementById('color-code') as HTMLInputElement).value;
+          htmlEl.style.color = color_val;
+          break;
+    
+        case 'font-change-tool':
+          let font_val = (document.getElementById('font-change-value') as HTMLInputElement).value;
+          htmlEl.style.fontFamily = font_val+", sans-serif";
+          break;
+    
+        case 'font-size-tool':
+          let font_size_val = (document.getElementById('font-size-value') as HTMLInputElement).value;
+          htmlEl.style.fontSize = font_size_val+"px";
+          break;
+    
+        default:
+          break;
+      }
+      selectionEl['htmlEl'] = htmlEl;
     }
   }
 }
 
-function changeSelectionText(value:any) {
+function changeSelectionText() {
   if (selectionEl['htmlEl'].tagName === "SPAN" && selectionEl['htmlText'] === selectionText) {
-    let span_item = selectionEl['htmlEl'];
-    span_item.style.color = value;
+    return selectionEl['htmlEl'];
   } else {
     range.deleteContents();
     var wrapper = document.createElement("div");
@@ -38,11 +44,11 @@ function changeSelectionText(value:any) {
 
     let span_item = document.createElement("span");
     span_item.innerHTML = selectionText;
-    span_item.style.color = value;
     wrapper.appendChild(span_item);
 
     while (child = wrapper.firstChild) {frag.appendChild(child);}
     range.insertNode(frag);
+    return span_item;
   }
 }
 
@@ -65,7 +71,6 @@ export class DocViewerComponent implements OnInit {
                 selectionEl['select'] = window.getSelection();
                 selectionEl['htmlEl'] = selectionEl['select'].baseNode.parentNode;
                 selectionEl['htmlText'] = selectionEl['htmlEl'].innerHTML;
-                console.log(selectionEl['select']);
                 range = selectionEl['select'].getRangeAt(0);
               }
             }
@@ -75,14 +80,19 @@ export class DocViewerComponent implements OnInit {
       }
     }
 
-    const colorIcon = document.getElementById('color-icon');
     const colorCode = document.getElementById('color-code') as HTMLInputElement;
+    const fontFamily = document.getElementById('font-change-value') as HTMLInputElement;
+    const fontSize = document.getElementById('font-size-value') as HTMLInputElement;
+  
     colorCode.addEventListener('keydown', function onEvent(e:KeyboardEvent) {
       if (e.keyCode === 13) {
+        let colorIcon = document.getElementById('color-icon');
         colorIcon.style.backgroundColor = colorCode.value;
         executeTool('color-tool');
       }
     });
+    fontFamily.addEventListener('keydown', function onEvent(e:KeyboardEvent) {if (e.keyCode === 13) {executeTool('font-change-tool');}});
+    fontSize.addEventListener('keydown', function onEvent(e:KeyboardEvent) {if (e.keyCode === 13) {executeTool('font-size-tool');}});
   }
 
   openToolWindow(tool: string) {
