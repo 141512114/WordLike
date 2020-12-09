@@ -14,7 +14,8 @@ function executeTool(tool: string) {
         range.deleteContents();
         var wrapper = document.createElement("div");
         var frag = document.createDocumentFragment(), child;
-  
+        
+        console.log(selectionHTMLEl.tagName);
         if (selectionHTMLEl.tagName === "SPAN" && selectionHTMLEl.innerText === selectionText) {
           let span_item = selectionHTMLEl;
           span_item.style.color = (document.getElementById('color-code') as HTMLInputElement).value;
