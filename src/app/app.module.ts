@@ -9,7 +9,6 @@ import { ControlPanelComponent } from './control-panel/control-panel.component';
 import { HeaderComponent } from './header/header.component';
 import { DocViewerComponent } from './doc-viewer/doc-viewer.component';
 import { ToolBarComponent } from './tool-bar/tool-bar.component';
-import { DocEditorComponent } from './doc-editor/doc-editor.component';
 
 @NgModule({
   declarations: [
@@ -17,8 +16,7 @@ import { DocEditorComponent } from './doc-editor/doc-editor.component';
     ControlPanelComponent,
     HeaderComponent,
     DocViewerComponent,
-    ToolBarComponent,
-    DocEditorComponent
+    ToolBarComponent
   ],
   imports: [
     BrowserModule,
