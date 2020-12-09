@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-var selectionEl = null, selectionHTMLEl = null, selectionText = null, range = null;
+var selectionEl = [], selectionText = null, range = null;
 
 function getSelectionText() {
   var text = ""; if (window.getSelection) {text = window.getSelection().toString();}
@@ -8,28 +8,11 @@ function getSelectionText() {
 }
 
 function executeTool(tool: string) {
-  if (selectionEl !== null && selectionHTMLEl !== null && selectionText !== null && range !== null) {
+  if (selectionEl !== null && selectionText !== null && range !== null) {
     switch (tool) {
       case 'color-tool':
-        range.deleteContents();
-        var wrapper = document.createElement("div");
-        var frag = document.createDocumentFragment(), child;
-        
-        console.log(selectionHTMLEl.tagName);
-        if (selectionHTMLEl.tagName === "SPAN" && selectionHTMLEl.innerText === selectionText) {
-          let span_item = selectionHTMLEl;
-          span_item.style.color = (document.getElementById('color-code') as HTMLInputElement).value;
-          wrapper.appendChild(span_item);
-        } else {
-          let span_item = document.createElement("span");
-          span_item.innerHTML = selectionText;
-          span_item.style.color = (document.getElementById('color-code') as HTMLInputElement).value;
-          wrapper.appendChild(span_item);
-        }
-        
-  
-        while (child = wrapper.firstChild) {frag.appendChild(child);}
-        range.insertNode(frag);
+        let color_val = (document.getElementById('color-code') as HTMLInputElement).value;
+        changeSelectionText(color_val);
         break;
   
       case 'font-change-tool':
@@ -41,6 +24,25 @@ function executeTool(tool: string) {
       default:
         break;
     }
+  }
+}
+
+function changeSelectionText(value:any) {
+  if (selectionEl['htmlEl'].tagName === "SPAN" && selectionEl['htmlText'] === selectionText) {
+    let span_item = selectionEl['htmlEl'];
+    span_item.style.color = value;
+  } else {
+    range.deleteContents();
+    var wrapper = document.createElement("div");
+    var frag = document.createDocumentFragment(), child;
+
+    let span_item = document.createElement("span");
+    span_item.innerHTML = selectionText;
+    span_item.style.color = value;
+    wrapper.appendChild(span_item);
+
+    while (child = wrapper.firstChild) {frag.appendChild(child);}
+    range.insertNode(frag);
   }
 }
 
@@ -60,10 +62,11 @@ export class DocViewerComponent implements OnInit {
           if (isDown) {
             selectionText = getSelectionText(); if (selectionText !== "") {
               if (window.getSelection && window.getSelection().getRangeAt) {
-                selectionEl = window.getSelection();
-                selectionHTMLEl = selectionEl.baseNode.parentNode;
-                console.log(selectionEl);
-                range = selectionEl.getRangeAt(0);
+                selectionEl['select'] = window.getSelection();
+                selectionEl['htmlEl'] = selectionEl['select'].baseNode.parentNode;
+                selectionEl['htmlText'] = selectionEl['htmlEl'].innerHTML;
+                console.log(selectionEl['select']);
+                range = selectionEl['select'].getRangeAt(0);
               }
             }
             isDown = false;
