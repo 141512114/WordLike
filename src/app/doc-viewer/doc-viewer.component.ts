@@ -35,9 +35,10 @@ function executeTool(tool: string) {
 }
 
 function changeSelectionText() {
-  if (selectionEl['htmlEl'].tagName === "SPAN" && selectionEl['htmlText'] === selectionText) {
+  if (selectionEl['htmlEl'].tagName === "SPAN") {
     return selectionEl['htmlEl'];
   } else {
+    console.log('h');
     range.deleteContents();
     var wrapper = document.createElement("div");
     var frag = document.createDocumentFragment(), child;
@@ -48,7 +49,7 @@ function changeSelectionText() {
 
     while (child = wrapper.firstChild) {frag.appendChild(child);}
     range.insertNode(frag);
-    return span_item;
+    return selectionEl['htmlEl'] = span_item;
   }
 }
 
