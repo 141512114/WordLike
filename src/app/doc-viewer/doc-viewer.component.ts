@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
+const color_tool = require('!raw-loader!../../img/svg/color-tool-icon.svg');
+const font_change_tool = require('!raw-loader!../../img/svg/font-change-icon.svg');
+const font_size_tool = require('!raw-loader!../../img/svg/font-size-icon.svg');
+
 var selectionEl = [], selectionText = null, range = null;
 
 function getSelectionText() {
@@ -60,6 +64,16 @@ function changeSelectionText() {
 })
 export class DocViewerComponent implements OnInit {
   ngOnInit() {
+    const color_tool_cont = document.getElementById('color-tool-container');
+    const font_change_tool_cont = document.getElementById('font-change-tool-container');
+    const font_size_tool_cont = document.getElementById('font-size-tool-container');
+
+    console.log();
+
+    color_tool_cont.innerHTML = color_tool;
+    font_change_tool_cont.innerHTML = font_change_tool;
+    font_size_tool_cont.innerHTML = font_size_tool;
+
     var isDown = false, docContainer = document.getElementById('document-container');
     if (docContainer != null) {
       var docContainerChildren = docContainer.children.length;
