@@ -15,7 +15,9 @@ to install them. Make sure they're installed locally inside this projects direct
 - electron
 - ngx-electron
 - ngx-deploy-npm
+- ng-inline-svg
 - @angular/cli
+- @angular/common/http
 - angular-cli-ghpages
 
 # Commands
