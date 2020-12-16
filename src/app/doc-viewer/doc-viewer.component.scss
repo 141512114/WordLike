@@ -197,7 +197,7 @@ section#main-content {
                     &:hover {
                         cursor: pointer;
         
-                        svg {
+                        div.svg-wrapper svg {
                             animation: hophop 1.075s infinite;
                             animation-play-state: running;
                             animation-delay: .135s;
@@ -207,7 +207,7 @@ section#main-content {
                     &.open {
                         background-color: $d_color_palette_three;
         
-                        svg {
+                        div.svg-wrapper svg {
                             animation: none;
                             animation-play-state: paused;
                             path {fill: $d_color_palette_six;}
