@@ -1,7 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 import { NgxElectronModule } from 'ngx-electron';
+import { InlineSVGModule } from 'ng-inline-svg';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -21,7 +23,9 @@ import { ToolBarComponent } from './tool-bar/tool-bar.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgxElectronModule
+    NgxElectronModule,
+    InlineSVGModule.forRoot({ baseUrl: './assets' }),
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

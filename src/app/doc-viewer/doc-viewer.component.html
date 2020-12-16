@@ -12,18 +12,18 @@
         <div class="document-editor-panel">
             <ul class="text-editor">
                 <li id="color-tool">
-                    <div id="color-tool-container" class="svg-wrapper" (click)="openToolWindow('color-tool')"></div>
+                    <div id="color-tool-container" class="svg-wrapper" (click)="openToolWindow('color-tool')" [inlineSVG]="'/img/svg/color-tool-icon.svg'"></div>
                     <div class="tool-window">
                         <input id="color-code" placeholder="#000000" value="#000000" maxlength="7">
                         <div id="color-icon"></div>
                     </div>
                 </li><li id="font-change-tool">
-                    <div id="font-change-tool-container" class="svg-wrapper" (click)="openToolWindow('font-change-tool')"></div>
+                    <div id="font-change-tool-container" class="svg-wrapper" (click)="openToolWindow('font-change-tool')" [inlineSVG]="'/img/svg/font-change-icon.svg'"></div>
                     <div class="tool-window">
                         <input id="font-change-value" placeholder="Font family..." value="Roboto Medium">
                     </div>
                 </li><li id="font-size-tool">
-                    <div id="font-size-tool-container" class="svg-wrapper" (click)="openToolWindow('font-size-tool')"></div>
+                    <div id="font-size-tool-container" class="svg-wrapper" (click)="openToolWindow('font-size-tool')" [inlineSVG]="'/img/svg/font-size-icon.svg'"></div>
                     <div class="tool-window">
                         <input id="font-size-value" placeholder="Font size in px..." value="16">
                     </div>
