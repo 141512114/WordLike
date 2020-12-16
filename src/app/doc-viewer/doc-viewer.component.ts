@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
-const color_tool = require('!raw-loader!../../img/svg/color-tool-icon.svg');
-const font_change_tool = require('!raw-loader!../../img/svg/font-change-icon.svg');
-const font_size_tool = require('!raw-loader!../../img/svg/font-size-icon.svg');
+const color_tool = require('../../img/svg/color-tool-icon.svg') as string;
+const font_change_tool = require('../../img/svg/font-change-icon.svg') as string;
+const font_size_tool = require('../../img/svg/font-size-icon.svg') as string;
 
 var selectionEl = [], selectionText = null, range = null;
 
@@ -68,7 +68,7 @@ export class DocViewerComponent implements OnInit {
     const font_change_tool_cont = document.getElementById('font-change-tool-container');
     const font_size_tool_cont = document.getElementById('font-size-tool-container');
 
-    console.log();
+    console.log(color_tool);
 
     color_tool_cont.innerHTML = color_tool;
     font_change_tool_cont.innerHTML = font_change_tool;
