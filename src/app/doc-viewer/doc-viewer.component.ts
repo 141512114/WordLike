@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 
 var selectionEl = [], selectionText = null, range = null;
 
@@ -56,7 +56,8 @@ function changeSelectionText() {
 @Component({
   selector: 'app-doc-viewer',
   templateUrl: './doc-viewer.component.html',
-  styleUrls: ['./doc-viewer.component.scss']
+  styleUrls: ['./doc-viewer.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class DocViewerComponent implements OnInit {
   ngOnInit() {
