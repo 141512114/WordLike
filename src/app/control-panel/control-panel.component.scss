@@ -86,29 +86,35 @@ section#main-content {
             background-color: $d_color_palette_one;
             transition: all 350ms;
 
-            svg {
+            div.svg-wrapper {
                 width: 90px;
                 height: 90px;
-                
+
                 margin: 0;
                 margin-right: 15px;
                 padding: 0;
 
-                path {
-                    fill: $d_color_palette_three;
-                }
+                svg {
+                    width: 100%;
+                    height: 100%;
 
-                &.arrow-hint {
-                    margin-right: 0;
-                    margin-left: auto;
+                    margin: 0;
+                    padding: 0;
 
-                    path {
-                        fill: #1e0629;
-                        transition: all 350ms;
+                    path {fill: $d_color_palette_three;}
+
+                    &.arrow-hint {
+                        margin-right: 0;
+                        margin-left: auto;
+
+                        path {
+                            fill: #1e0629;
+                            transition: all 350ms;
+                        }
                     }
                 }
             }
-
+            
             div.button-desc {
                 display: flex;
                 flex-direction: column;
@@ -133,10 +139,7 @@ section#main-content {
             &:hover {
                 cursor: pointer;
                 background-color: $d_color_palette_two;
-
-                svg.arrow-hint path {
-                    fill: $d_color_palette_three;
-                }
+                div.svg-wrapper svg.arrow-hint path {fill: $d_color_palette_three;}
             }
         }
     }
