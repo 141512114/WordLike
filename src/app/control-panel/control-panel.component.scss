@@ -178,7 +178,7 @@ section#main-content {
                 border-radius: 100px 15px 15px 100px;
                 outline: none;
                 user-select: none;
-                background-color: $d_color_palette_four;
+                background-color: rgba(20, 14, 54, .5);
                 transition: all 350ms;
 
                 div.svg-wrapper {
@@ -252,6 +252,7 @@ section#main-content {
         margin: 0;
         padding: 14px 0;
         z-index: 200;
+        user-select: none;
 
         a, p, span {
             margin: 0;
