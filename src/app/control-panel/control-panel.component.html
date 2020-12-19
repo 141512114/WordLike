@@ -1,36 +1,38 @@
 <section id="main-content">
-    <div class="intro-container">
-        <div class="intro-wrapper" [inlineSVG]="'/img/svg/app-icon.svg'"></div>
+    <div class="deco-container">
+        <div class="deco-element"></div>
+        <div class="deco-element"></div>
+        <div class="deco-element"></div>
     </div>
 
-    <!-- <app-header></app-header>
+    <app-header></app-header>
     <div class="action-container">
+        <div class="component-holder action-button-container">
+            <div class="component-holder btn-container" title="Create new document" (click)="openDocViewer()">
+                <div id="new-document-container" class="svg-wrapper" [inlineSVG]="'/img/svg/new-document-icon-v2.svg'"></div>
+                <div class="button-desc">
+                    <h3>Create</h3>
+                    <p><i>New document</i></p>
+                </div>
+            </div>
+            <div class="component-holder btn-container" title="Open and edit an existing document">
+                <div id="open-document-container" class="svg-wrapper" [inlineSVG]="'/img/svg/open-document-icon.svg'"></div>
+                <div class="button-desc">
+                    <h3>Open</h3>
+                    <p><i>Existing document</i></p>
+                </div>
+            </div>
+        </div>
         <div class="component-holder action-header">
             <h2>Welcome!</h2>
-            <p>Glad to see you're using "word-like"-app!<br />
-                Visit the <a href="https://github.com/KoolerNolan/new_word_app" target="_blank" title="Go to GitHub repository">GitHub repository</a> to learn more about this app
-                or to download the latest version.</p>
-        </div>
-        <div class="component-holder btn-container" title="Create new document" (click)="openDocViewer()">
-            <div id="new-document-container" class="svg-wrapper" [inlineSVG]="'/img/svg/new-document-icon-v2.svg'"></div>
-            <div class="button-desc">
-                <h3>Create</h3>
-                <p>Create a new document</p>
-            </div>
-            <div class="arrow-container svg-wrapper" [inlineSVG]="'/img/svg/arrow-hint-icon.svg'"></div>
-        </div>
-        <div class="component-holder btn-container" title="Open and edit an existing document">
-            <div id="open-document-container" class="svg-wrapper" [inlineSVG]="'/img/svg/open-document-icon.svg'"></div>         
-            <div class="button-desc">
-                <h3>Open</h3>
-                <p>Open and edit an existing document</p>
-            </div>
-            <div class="arrow-container svg-wrapper" [inlineSVG]="'/img/svg/arrow-hint-icon.svg'"></div>
+            <p>Glad to see you are using "word-like"-<wbr />app!
+            <br />Visit the <a href="https://github.com/KoolerNolan/new_word_app" target="_blank" title="Go to GitHub repository">GitHub<wbr /> repository</a> to learn
+            more about this app or to download the latest version.</p>
         </div>
     </div>
-    <footer id="main-footer">
+    <footer id="main-footer" class="noselect">
         <a href="https://github.com/KoolerNolan/new_word_app" target="_blank" title="Go to GitHub repository">GitHub repository</a>
         <span>&mdash;</span>
         <p>made by Nolan</p>
-    </footer> -->
+    </footer>
 </section>

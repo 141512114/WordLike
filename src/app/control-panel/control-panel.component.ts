@@ -17,7 +17,7 @@ export class ControlPanelComponent {
       height: 720,
       center: true,
       show: false,
-      backgroundColor: '#1e0629',
+      backgroundColor: '#272a57',
       webPreferences: {
           nodeIntegration: true,
           backgroundThrottling: false,

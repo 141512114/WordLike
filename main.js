@@ -8,8 +8,8 @@ function createWindow() {
     win = new BrowserWindow({
         title: "Starting...",
         show: false,
-        width: 750,
-        height: 500,
+        width: 650,
+        height: 375,
         backgroundColor: '#272a57',
         webPreferences: {
             nodeIntegration: true,
