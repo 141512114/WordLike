@@ -14,6 +14,60 @@ section#main-content {
     display: flex;
     flex-direction: column;
 
+    div.intro-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+
+        margin: 0;
+        padding: 0;
+
+        div.intro-wrapper {
+            position: relative;
+
+            width: 175px;
+            height: 175px;
+
+            margin: 0;
+            padding: 0;
+
+            svg {
+                width: 100%;
+                height: 100%;
+
+                margin: 0;
+                padding: 0;
+
+                transition: all 1100ms;
+                animation: introAnim .20s ease-out normal;
+                animation-iteration-count: 1;
+                animation-fill-mode: forwards;
+                animation-delay: 500ms;
+
+                path { fill: $d_color_palette_six; }
+
+                @keyframes introAnim {
+                    47% {
+                        opacity: 1;
+                    }
+                    90% {
+                        opacity: 0;
+                    }
+                    100% {
+                        transform: scale(1.35);
+                        opacity: 0;
+                    }
+                }
+            }
+        }
+    }
+
     div.action-container {
         display: flex;
         flex-direction: column;
