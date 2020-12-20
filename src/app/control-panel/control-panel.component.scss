@@ -90,7 +90,7 @@ section#main-content {
         height: 100%;
 
         margin: 0;
-        padding: 0 30px;
+        padding: 0 27px;
 
         z-index: 100;
 
@@ -125,11 +125,11 @@ section#main-content {
         div.action-header {
             flex-direction: column;
             display: inline-table;
-            width: 300px;
+            width: 325px;
             height: auto;
 
-            margin-bottom: 25px;
-            padding: 35px;
+            margin: 0;
+            padding: 25px;
 
             backdrop-filter: blur(25px);
 
@@ -137,15 +137,12 @@ section#main-content {
             border-radius: 10px;
 
             h2 {
-                font-size: 35px;
-                margin-bottom: 5px;
+                font-size: 32px;
+                margin-bottom: 4px;
             }
             p {
-                font-size: 18px;
+                font-size: 16px;
                 color: $d_color_palette_p;
-                text-align: justify;
-                word-wrap: break-word;
-                white-space: pre-wrap;
 
                 a {
                     text-decoration: none;
@@ -168,7 +165,7 @@ section#main-content {
             width: 100%;
 
             margin: 0;
-            margin-right: 45px;
+            margin-right: 35px;
             padding: 0;
 
             div.btn-container {
@@ -250,7 +247,7 @@ section#main-content {
         height: auto;
 
         margin: 0;
-        padding: 14px 0;
+        padding: 12px 0;
         z-index: 200;
         user-select: none;
 
