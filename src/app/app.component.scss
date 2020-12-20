@@ -12,6 +12,10 @@ $d_color_palette_ten: #56e4fd;
 
 $d_color_palette_p: #b3b3b3;
 
+$d_color_palette_closeApp: #f52718;
+$d_color_palette_maximizeApp: #f5e618;
+$d_color_palette_minimizeApp: #18f535;
+
 // Size variables
 $d_header_height: 36px;
 
@@ -36,9 +40,4 @@ $d_header_height: 36px;
 * {
     position: relative;
     box-sizing: border-box;
-}
-
-.deactivated {
-    background-color: lightgrey !important;
-    &:hover {cursor: default !important;}
 }

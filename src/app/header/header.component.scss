@@ -30,9 +30,9 @@ header#main {
             height: 100%;
 
             margin: 0;
-            $d_action_btn_offset: 8px;
+            $d_action_btn_offset: 4px;
             padding: 0;
-            padding-left: $d_action_btn_offset;
+            padding-left: 8px;
 
             li {
                 display: flex;
@@ -50,25 +50,19 @@ header#main {
                 background-color: transparent;
 
                 button {
-                    $d_square: 20px; 
+                    $d_square: 27px; 
                     width: $d_square;
                     height: $d_square;
 
                     margin: 0;
                     padding: 0;
 
-                    font-family: 'Roboto Medium', sans-serif;
-                    font-size: 24px;
-                    font-weight: 500;
-                    color: $d_color_palette_three;
-                    text-align: center;
-
                     border: none;
                     outline: none;
-                    border-radius: 100%;
                     user-select: none;
 
                     transition: all 250ms;
+                    background-color: transparent;
 
                     svg {
                         width: 100%;
@@ -82,25 +76,60 @@ header#main {
                         cursor: pointer;
                     }
 
+                    $svg_transition_time: all 250ms;
+                    &#close-app svg {
+                        path#outlineTriangle {
+                            fill: $d_color_palette_closeApp;
+                        }
+                        path#innerTriangle {
+                            fill: transparent;
+                            transition: $svg_transition_time;
+                        }
+
+                        &:hover path#innerTriangle {
+                            fill: $d_color_palette_closeApp;
+                        }
+                    }
+
+                    &#maximize-app svg {
+                        path#outlineSquare {
+                            fill: $d_color_palette_maximizeApp;
+                        }
+                        path#innerSquare {
+                            fill: transparent;
+                            transition: $svg_transition_time;
+                        }
+
+                        &:hover path#innerSquare {
+                            fill: $d_color_palette_maximizeApp;
+                        }
+                    }
+
+                    &#minimize-app svg {
+                        path#outlineCircle {
+                            fill: $d_color_palette_minimizeApp;
+                        }
+                        path#innerCircle {
+                            fill: transparent;
+                            transition: $svg_transition_time;
+                        }
+
+                        &:hover path#innerCircle {
+                            fill: $d_color_palette_minimizeApp;
+                        }
+                    }
+
+                    &.deactivated {
+                        svg {
+                            path.inner {fill: none !important;}
+                            path.outer {fill: $d_color_palette_p !important;}
+                        }
+                        &:hover {cursor: default;}
+                    }
+
                     &.edged {
                         border-radius: 0;
                         background-color: transparent;
-                    }
-
-                    
-                    &#maximize-app {
-                        background-color: #ffdf42;
-                        &:hover {
-                            cursor: pointer;
-                            background-color: #e4c52c;
-                        }
-                    }
-                    &#minimize-app {
-                        background-color: #3cfd89;
-                        &:hover {
-                            cursor: pointer;
-                            background-color: #29dd71;
-                        }
                     }
                 }
 
