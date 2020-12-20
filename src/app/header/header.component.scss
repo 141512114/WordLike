@@ -70,6 +70,14 @@ header#main {
 
                     transition: all 250ms;
 
+                    svg {
+                        width: 100%;
+                        height: 100%;
+
+                        margin: 0;
+                        padding: 0;
+                    }
+
                     &:hover {
                         cursor: pointer;
                     }
@@ -79,13 +87,7 @@ header#main {
                         background-color: transparent;
                     }
 
-                    &#close-app {
-                        background-color: #fd3939;
-                        &:hover {
-                            cursor: pointer;
-                            background-color: #da2c2c;
-                        }
-                    }
+                    
                     &#maximize-app {
                         background-color: #ffdf42;
                         &:hover {

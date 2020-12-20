@@ -1,7 +1,7 @@
 <header id="main">
     <nav class="window-actions">
         <ul>
-            <li><button id="close-app" title="Close application" (click)="taskBarActions('closeWindow')"></button>
+            <li><button id="close-app" title="Close application" (click)="taskBarActions('closeWindow')" [inlineSVG]="'../../asset/img/svg/triangle.svg'"></button>
             </li><li><button id="maximize-app" title="Toggle maximize application" (click)="taskBarActions('maximize')"></button>
             </li><li><button id="minimize-app" title="Minimize application" (click)="taskBarActions('minimize')"></button>
             </li>
