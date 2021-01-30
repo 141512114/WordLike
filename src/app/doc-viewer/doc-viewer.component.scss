@@ -24,7 +24,7 @@ section#main-content {
         div.document-viewer-scroll {
             @include d_flexEl(none);
             overflow: auto;
-            background-color: $d_color_palette_four;
+            background-color: $d_color_palette_two;
         
             div#document-container {
                 @include d_flexEl(column, 0, 75px 55px, visible);
@@ -61,44 +61,53 @@ section#main-content {
 
         div.document-editor-panel {
             position: absolute;
-            top: 0;
+            bottom: 0;
             left: 0;
         
             display: flex;
             justify-content: center;
             align-items: flex-start;
-            $d_sidebar_width: 61px;
-            width: $d_sidebar_width;
-            height: 100%;
+            $d_sidebar_height: 72px;
+            width: 100%;
+            height: $d_sidebar_height;
         
             margin: 0;
-            padding: 15px 0;
-        
-            pointer-events: all;
-            background-color: $d_color_palette_six;
+            margin-bottom: 7px;
+            padding: 9px 0;
+
+            pointer-events: none;
         
             ul.text-editor {
                 display: flex;
-                flex-direction: column;
-                width: 100%;
-                height: auto;
+                flex-direction: row;
+                width: auto;
+                height: 100%;
         
                 margin: 0;
-                padding: 0;
+                padding: 4px 14px;
+
+                border-radius: 100px;
+                pointer-events: all;
+                background-color: $d_color_palette_six;
         
                 li {
                     position: relative;
-                    width: 100%;
-                    height: auto;
+
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: auto;
+                    height: 100%;
         
                     margin: 0;
-                    padding: 0;
+                    padding: 2px;
                     
                     transition: all 350ms;
+                    list-style: none;
 
                     div.svg-wrapper {
-                        width: 100%;
-                        height: auto;
+                        width: auto;
+                        height: 100%;
         
                         margin: 0;
                         padding: 4px 9px;
@@ -106,8 +115,8 @@ section#main-content {
                         z-index: 10;
 
                         svg {
-                            width: 100%;
-                            height: auto;
+                            width: auto;
+                            height: 100%;
             
                             margin: 0;
                             padding: 0;
@@ -140,7 +149,7 @@ section#main-content {
                     div.tool-window {
                         position: absolute;
                         top: 0;
-                        left: $d_sidebar_width;
+                        left: $d_sidebar_height;
         
                         display: flex;
                         justify-content: center;
@@ -193,7 +202,7 @@ section#main-content {
                         }
                     }
         
-                    &:last-child {margin-bottom: 0;}
+                    &:last-child {margin-right: 0;}
                     &:hover {
                         cursor: pointer;
         
@@ -201,18 +210,42 @@ section#main-content {
                             animation: hophop 1.075s infinite;
                             animation-play-state: running;
                             animation-delay: .135s;
+
+                            path {fill: $d_color_palette_six;}
                         }
+
+                        &::before {
+                            visibility: visible;
+                            opacity: 1;
+                        }
+                    }
+
+                    &::before {
+                        position: absolute;
+                        content: "";
+                        $d_size: 41px;
+                        width: $d_size;
+                        height: $d_size;
+                        border-radius: 50%;
+                        background-color: $d_color_palette_three;
+                        opacity: 0;
+                        visibility: hidden;
+                        z-index: 0;
+                        transition: all 350ms;
                     }
         
                     &.open {
-                        background-color: $d_color_palette_three;
-        
                         div.svg-wrapper svg {
                             animation: none;
                             animation-play-state: paused;
                             path {fill: $d_color_palette_six;}
                         }
                         div.tool-window {width: 255px;}
+
+                        &::before {
+                            visibility: visible;
+                            opacity: 1;
+                        }
                     }
                 }
             }
