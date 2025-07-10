@@ -1,3 +1,6 @@
+# DISCONTINUED
+## This project is no longer being worked on!
+
 # A "word"-like application
 This is a lightweight application developed using Electron.js within an Angular framework. It functions as a simple text editor, allowing users to create, edit, and open documents.\
 The idea for this project emerged from the lack of free alternatives to tools like OpenOffice and LibreOffice. However, the goal is not to compete with these comprehensive office suites. Instead, this project was designed as a learning experience to explore Angular and Electron.js.\
